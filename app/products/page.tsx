@@ -27,7 +27,7 @@ function ProductsContent() {
     fetch('/api/products').then(r=>r.json()).then(setProducts).catch(()=>setProducts(SAMPLE_PRODUCTS as Product[])).finally(()=>setLoading(false));
   }, []);
 
-  const updateURL = useCallback(debounce((f: FilterState) => {
+  const updateURL = useCallback(debounce((f: any) => {
     const p = new URLSearchParams();
     if (f.search) p.set('q',f.search);
     if (f.categories.length===1) p.set('category',f.categories[0]);
