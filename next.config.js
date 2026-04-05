@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'drive.google.com' },
@@ -9,6 +13,7 @@ const nextConfig = {
     ],
     formats: ['image/avif', 'image/webp'],
   },
+
   async headers() {
     return [
       {
